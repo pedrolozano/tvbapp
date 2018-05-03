@@ -21,11 +21,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-search/paper-search-bar.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="my-icons.html">
 
 <link rel="lazy-import" href="my-view1.html">
 <link rel="lazy-import" href="my-view2.html">
 <link rel="lazy-import" href="my-view3.html">
+<link rel="lazy-import" href="my-view4.html">
+<link rel="lazy-import" href="my-view5.html">
+<link rel="lazy-import" href="my-view6.html">
 <link rel="lazy-import" href="my-view404.html">
 
 <dom-module id="my-app">
@@ -86,15 +92,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
+        
+
+        
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="view1" href="[[rootPath]]view1">View One</a>
-          <a name="view2" href="[[rootPath]]view2">View Two</a>
-          <a name="view3" href="[[rootPath]]view3">View Three</a>
-           <a name="view4" href="[[rootPath]]view4">View Four</a>
-            <a name="view5" href="[[rootPath]]view5">View Three</a>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view1" href="[[rootPath]]view1">Verb eat ate</a></div>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view2" href="[[rootPath]]view2">Verb lay laid </a></div>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view3" href="[[rootPath]]view3">Questions & Negatives </a></div>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view4" href="[[rootPath]]view4">Family Verbs</a></div>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view5" href="[[rootPath]]view5">Excercise</a></div>
+          <div><iron-icon icon="icons:list"></iron-icon><a name="view6" href="[[rootPath]]view6">chart eat / ate</a></div>
         </iron-selector>
-        </iron-selector>
-        </iron-selector>
+
       </app-drawer>
 
       <!-- Main content -->
@@ -105,10 +114,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
             <div main-title>The Verb Book</div>
           </app-toolbar>
-          <paper-search-bar> </paper-search-bar>
+       
+                       <paper-search-bar
+                             query="{{query}}"
+                             placeholder="Enter search term"
+                             on-paper-search-search="search"
+                             disableFilterButton="true">
+                       </paper-search-bar>
+
+<paper-tabs selected="{{selected}}">
+  <paper-tab name="view1">1</paper-tab>
+  <paper-tab name="view2">2</paper-tab>
+  <paper-tab name="view3">3</paper-tab>
+</paper-tabs>
+
+
+         
         </app-header>
 
-        <iron-pages
+        <!--<iron-pages selected="[[selected]]">
+              <my-view1 name="view1"></my-view1>
+              <my-view2 name="view2"></my-view2>
+              <my-view3 name="view3"></my-view3>
+        </iron-pages>-->
+
+       <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
@@ -118,6 +148,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view3 name="view3"></my-view3>
           <my-view4 name="view4"></my-view4>
           <my-view5 name="view5"></my-view5>
+          <my-view5 name="view6"></my-view6>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
@@ -177,8 +208,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _showPage404() {
         this.page = 'view404';
       }
-    }
 
+      search() {
+        alert(this.query);
+        }
+    }
     window.customElements.define(MyApp.is, MyApp);
+
   </script>
+
+
+
+   
 </dom-module>
