@@ -24,6 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-list/iron-list.html">
+
 <link rel="import" href="my-icons.html">
 
 <link rel="lazy-import" href="my-view1.html">
@@ -93,8 +95,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>Menu</app-toolbar>
         
-
-        
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <div><iron-icon icon="icons:list"></iron-icon><a name="view1" href="[[rootPath]]view1">Verb eat ate</a></div>
           <div><iron-icon icon="icons:list"></iron-icon><a name="view2" href="[[rootPath]]view2">Verb lay laid </a></div>
@@ -115,18 +115,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div main-title>The Verb Book</div>
           </app-toolbar>
        
-                       <paper-search-bar
+                      <!-- <paper-search-bar
                              query="{{query}}"
                              placeholder="Enter search term"
                              on-paper-search-search="search"
                              disableFilterButton="true">
-                       </paper-search-bar>
+                       </paper-search-bar>-->
 
-<paper-tabs selected="{{selected}}">
+<!--<paper-tabs selected="{{selected}}">
   <paper-tab name="view1">1</paper-tab>
   <paper-tab name="view2">2</paper-tab>
   <paper-tab name="view3">3</paper-tab>
-</paper-tabs>
+</paper-tabs>-->
 
 
          
@@ -154,6 +154,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-header-layout>
     </app-drawer-layout>
   </template>
+
+   <iron-list scroll-target="document">
+    <template>
+      <div>
+        test
+      </div>
+      <div>
+        testa
+      </div>
+      <div>
+        testb
+      </div>
+    </template>
+  </iron-list>
 
   <script>
     // Gesture events like tap and track generated from touch will not be
