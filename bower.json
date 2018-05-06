@@ -20,7 +20,9 @@
     "paper-tabs": "PolymerElements/paper-tabs#^2.1.1",
     "iron-icons": "PolymerElements/iron-icons#^2.1.1",
     "paper-drawer": "Collaborne/paper-drawer#^2.0.2",
-    "iron-list": "PolymerElements/iron-list#^2.0.14"
+    "iron-list": "PolymerElements/iron-list#^2.0.14",
+    "iron-ajax": "^2.1.3",
+    "iron-image": "^2.2.1"
   },
   "resolutions": {
     "polymer": "^2.0.0"
