@@ -1,5 +1,5 @@
 
-<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/polymer/polymer.html">
   <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
@@ -12,15 +12,18 @@
   <link rel="import" href="../bower_components/iron-image/iron-image.html">
   <link rel="import" href="../bower_components/iron-list/iron-list.html">
 <link rel="import" href="shared-styles.html">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <dom-module id="my-view4">
   <template>
-    <style include="shared-styles">
-      :host {
-        display: block;
-
-        padding: 10px;
-      }
+    <style>
+     /* :host {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }*/
     body {
       height: 100vh;
       margin: 0;
@@ -30,7 +33,7 @@
 
     iron-list {
       /* add padding since the app-toolbar is fixed at the top */
-      padding-top: 64px;
+      flex: 1 1 auto;
     }
     app-toolbar {
         background-color: var(--google-green-700);
@@ -40,7 +43,7 @@
         font-size: 18px;
         z-index: 1;
         /*position: fixed;*/
-        top: 40px;
+        top: 10px;
         left: 0;
         right: 0;
       }
@@ -50,11 +53,12 @@
       iron-list {
         padding-top: 64px;
         --iron-list-items-container: {
-          max-width: 800px;
+          max-width: 90%;
           margin: auto;
           margin-top: 60px;
           margin-bottom: 60px;
           border-bottom: 1px solid #ddd;
+          height: 100vh;
         };
       }
       .item {
@@ -109,15 +113,46 @@
           font-size: 14px;
         }
       }
+
+      .show {
+          background-color:yellow;   
+      }
+
+        #searcher { position:fixed; top:10px; right:10px; }
+
+        #result {
+         position: absolute;
+         width: 100%;
+         max-width:870px;
+         cursor: pointer;
+         overflow-y: auto;
+         max-height: 400px;
+         box-sizing: border-box;
+         z-index: 1001;
+        }
+        .link-class:hover{
+         background-color:#f1f1f1;
+        }
   </style>
 
    <iron-ajax url="../data/contacts.json" last-response="{{items}}" auto></iron-ajax>
   
   <app-toolbar>
-      <div main-title>Collapsible items</div>
-      <paper-icon-button icon="search" alt="Search"></paper-icon-button>
+      <div main-title>Verbs with "ee"</div>
+     <!--<input-search id = "searcher" bind-value="{{query}}" >
+      <input>
+    </iron-search>-->
+     <!-- <paper-input label="query" value="{{query}}"></paper-input>-->
+      <paper-icon-button icon="search" alt="Search"  on-tap="searchData"   ></paper-icon-button>
       <paper-icon-button icon="more-vert" alt="More options"></paper-icon-button>
     </app-toolbar>
+
+    <!--<div align="center">
+    <input type="text" name="search" id="search" placeholder="Search Employee Details" class="form-control" />
+   </div>-->
+   <!--<ul class="list-group" id="result"></ul>-->
+   <br />
+  </div>
 
     <iron-list id="list" items="[[items]]" as="item" selection-enabled multi-selection>
       <template>
@@ -139,14 +174,33 @@
 
 
  
-
+  <!--<script  type="text/javascript" src="json2.js"></script>
   <script>
-    class MyView4 extends Polymer.Element {
-      static get is() { return 'my-view4'; }
+$(document).ready(function(){
+ $.ajaxSetup({ cache: false });
+ $('#search').keyup(function(){
+  $('#result').html('');
+  $('#state').val('');
+  var searchField = $('#search').val();
+  var expression = new RegExp(searchField, "i");
+  $.getJSON('../data/contacts.json', function(data) {
+   $.each(data, function(key, value){
+    if (value.name.search(expression) != -1 || value.location.search(expression) != -1)
+    {
+     $('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted">'+value.location+'</span></li>');
     }
-
-    window.customElements.define(MyView4.is, MyView4);
-
+   });   
+  });
+ });
+ 
+ $('#result').on('click', 'li', function() {
+  var click_text = $(this).text().split('|');
+  $('#search').val($.trim(click_text[0]));
+  $("#result").html('');
+ });
+});
+</script>-->
+  <script>
     HTMLImports.whenReady(function() {
       Polymer({
         is: 'my-view4',
@@ -167,13 +221,77 @@
         },
         getClassForItem: function(item, selected) {
           return selected ? 'item expanded' : 'item';
+        },
+
+        searchData: function(query) {
+          alert(this.query);
+
+          var txt = (this.query || '').toLowerCase(),
+          i, len, data, prop, val, matches = [];;
+          alert("txt"+txt+"");
+          if (this.query == '') {
+            alert("No coincidio");
+            return matches;
+          }
+
+          for (i = 0, len = items.length; i < len; i++) {
+            data = items[i];
+            for (prop in data) {
+              if (data.hasOwnProperty(prop)) {
+                val = data[prop];
+                if (typeof val !== 'undefined' && val.toLowerCase && val.toLowerCase().indexOf(txt) >= 0) {
+                  // this data matches
+                  alert ("matches"+ val);
+                  matches.push(data);
+                  break;
+                }
+              }
+            }
+          }
+          return matches;          
         }
+
       });
     });
+/*
+    $('#searcher').quicksearch('table tbody tr', {
+    'delay': 100,
+    'bind': 'keyup keydown',
+    'show': function() {
+        if ($('#searcher').val() === '') {
+            return;
+        }
+        $(this).addClass('show');
+    },
+    'onAfter': function() {
+        if ($('#searcher').val() === '') {
+            return;
+        }
+        if ($('.show:first').length > 0) {
+          $('html,body').scrollTop($('.show:first').offset().top);
+        }
+    },
+    'hide': function() {
+        $(this).removeClass('show');
+    },
+    'prepareQuery': function(val) {
+        return new RegExp(val, "i");
+    },
+    'testQuery': function(query, txt, _row) {
+        return query.test(txt);
+    }
+});
 
+$('#searcher').focus();
+   /*class MyView4 extends Polymer.Element {
+      static get is() { return 'my-view4'; }
+    }*/
+
+ /*   window.customElements.define(MyView4.is, MyView4);*/
   </script>
 </dom-module>
 
-<view4></view4>
+
+
 
 

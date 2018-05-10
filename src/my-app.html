@@ -75,6 +75,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
     </style>
 
     <app-location
@@ -155,20 +156,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </app-drawer-layout>
   </template>
 
-   <iron-list scroll-target="document">
-    <template>
-      <div>
-        test
-      </div>
-      <div>
-        testa
-      </div>
-      <div>
-        testb
-      </div>
-    </template>
-  </iron-list>
-
   <script>
     // Gesture events like tap and track generated from touch will not be
     // preventable, allowing for better scrolling performance.
@@ -189,6 +176,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // This shouldn't be neccessary, but the Analyzer isn't picking up
           // Polymer.Element#rootPath
           rootPath: String,
+         attached: function() {
+          // Use the document element
+          this.$.list.scrollTarget = this.ownerDocument.documentElement;
+          }
         };
       }
 
@@ -226,6 +217,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       search() {
         alert(this.query);
         }
+
+
     }
     window.customElements.define(MyApp.is, MyApp);
 
