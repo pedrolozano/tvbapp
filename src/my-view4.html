@@ -17,7 +17,6 @@
    <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
     <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
   <link rel="import" href="../bower_components/paper-card/paper-card.html">
-  <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view4">
@@ -25,33 +24,13 @@
     <style include="shared-styles">
       :host {
         display: block;
-        height: 100%;
+        height: 100%
       }
-
       iron-scroll-threshold {
-        height: 100%;
-        overflow: auto;
-      }
-
-      iron-list {
       height: 100%;
-       --iron-list-items-container: {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 60px;
-            margin-bottom: 10px;
-          };
-     }
-     /* iron-list {
-          padding-top: 64px;
-          padding-bottom: 16px;
-          --iron-list-items-container: {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 60px;
-            margin-bottom: 10px;
-          };
-        }*/
+      overflow: auto;
+       }         
+
       app-toolbar {
           position: fixed;
           top: 0;
@@ -73,7 +52,16 @@
           height: 20px;
           margin-right: 10px;
         }
-       
+        iron-list {
+          padding-top: 64px;
+          padding-bottom: 16px;
+          --iron-list-items-container: {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 10px;
+          };
+        }
         .wordItem {
           @apply --layout-horizontal;
           margin: 16px 16px 0 16px;
@@ -102,31 +90,28 @@
           font-size: 14px;
           margin: 10px 0;
         }
-
         .spacer {
           @apply --layout-flex;
         }
         .index {
           width: 30px;
         }
-
     </style>
-
  <iron-ajax id="ajax"
           url="../data/words.json"
           params='{"results": 20}'
           handle-as="json"
           loading="{{loadingWords}}"
-          on-response="_didRespond"></iron-ajax>
+          last-response="{{items}}"
+          auto></iron-ajax>
 
       <app-toolbar>
         <div main-title> Cargando palabras</div> 
       </app-toolbar>
 
-      <iron-list id="list" items="[]" as="word" scroll-target="document">
-
-        <template is="dom-repeat"">  
-            <iron-swipeable-container>
+      <iron-list id="list" items="[[items]]" as="word" scroll-target="document">
+        <template>  
+            <iron-swipeable-container>       
               <div class="card"  tabindex$="[[tabIndex]]">
                 <h1>[[word.number]] [[word.present]], [[word.past]]</h1>
                 <audio controls controlsList="nodownload" id="myAudio">
@@ -139,32 +124,34 @@
                   [[word.poem.line4]]<br/>
                   [[word.poem.line5]]<br/>
                 </p>
+                </address>
                 <address>[[word.translation]]</address>
               </div>
             </iron-swipeable-container>
-
-
         </template>
       </iron-list>
 
       <div class="loadingIndicator">
-        <paper-spinner active="{{loadingWords}}"></paper-spinner> Llenando Palabras
+        <paper-spinner active="{{loadingWords}}"></paper-spinner> Fetching data
       </div>
 
-      <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
-     <iron-scroll-threshold id="scrollTheshold"
-          lower-threshold="100"
+      <!-- this element will load more data when the user scrolls down and reached the lower threshold 
+      <iron-scroll-threshold id="scrollTheshold"
+          lower-threshold="500"
           on-lower-threshold="_load"
-          lower-triggered="{{nearBottom}}
-          scroll-target="document"></iron-scroll-threshold>
+          scroll-target="document"></iron-scroll-threshold>-->
+
     </template>
     <script>
     HTMLImports.whenReady(function() {
       Polymer({
         is: 'my-view4',
+        attached: function() {
+          // Use the document element
+          this.$.list.scrollTarget = this.ownerDocument.documentElement;
+        },
         _load: function() {
           this.$.ajax.generateRequest();
-
         },
         _didRespond: function(e) {
           var people = e.detail.response.results;
@@ -173,7 +160,6 @@
           }, this);
           // Clear the lower threshold so we can load more data when the user scrolls down again.
           this.$.scrollTheshold.clearTriggers();
-          console.log("cleartriggers");
         }
       });
     });
@@ -182,7 +168,6 @@
     class MyView4 extends Polymer.Element {
       static get is() { return 'my-view4'; }
     }
-
     window.customElements.define(MyView4.is, MyView4);
   </script>-->
 </dom-module>

@@ -1,4 +1,4 @@
-{"results":[
+[
 	{"number":"1",
 	 "present":"BLEED",
 	 "past":"BLED",
@@ -78,5 +78,4 @@
 	 "picture":{"large":"eat2.png","medium":"eat2.png","thumbnail":"eat2.png"},"nat":"FI"
 	}
 
-],
-"info":{"seed":"ce37070026700343","results":200,"page":2,"version":"1.1"}}
+]
