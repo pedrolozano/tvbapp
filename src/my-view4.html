@@ -17,6 +17,7 @@
    <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
     <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
   <link rel="import" href="../bower_components/paper-card/paper-card.html">
+  <link rel="import" href="../bower_components/paper-progress/paper-progress.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view4">
@@ -24,9 +25,33 @@
     <style include="shared-styles">
       :host {
         display: block;
-
-        padding: 10px;
+        height: 100%;
       }
+
+      iron-scroll-threshold {
+        height: 100%;
+        overflow: auto;
+      }
+
+      iron-list {
+      height: 100%;
+       --iron-list-items-container: {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 10px;
+          };
+     }
+     /* iron-list {
+          padding-top: 64px;
+          padding-bottom: 16px;
+          --iron-list-items-container: {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 10px;
+          };
+        }*/
       app-toolbar {
           position: fixed;
           top: 0;
@@ -48,16 +73,7 @@
           height: 20px;
           margin-right: 10px;
         }
-        iron-list {
-          padding-top: 64px;
-          padding-bottom: 16px;
-          --iron-list-items-container: {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 60px;
-            margin-bottom: 10px;
-          };
-        }
+       
         .wordItem {
           @apply --layout-horizontal;
           margin: 16px 16px 0 16px;
@@ -95,6 +111,7 @@
         }
 
     </style>
+
  <iron-ajax id="ajax"
           url="../data/words.json"
           params='{"results": 20}'
@@ -107,28 +124,38 @@
       </app-toolbar>
 
       <iron-list id="list" items="[]" as="word" scroll-target="document">
-        <template>          
+
+        <template is="dom-repeat"">  
+            <iron-swipeable-container>
               <div class="card"  tabindex$="[[tabIndex]]">
-                <h1>[[word.number]] [[word.present]] [[word.past]]</h1>
+                <h1>[[word.number]] [[word.present]], [[word.past]]</h1>
                 <audio controls controlsList="nodownload" id="myAudio">
                 <source src="audio/[[word.audio]]"type="audio/mpeg"></audio>
                 <iron-image class="avatar" sizing="contain" src="images/[[word.picture.medium]]"></iron-image>
-                <address>
-                  [[word.poem]]<br/>
-                </address>
+                <p>
+                  [[word.poem.line1]]<br/>
+                  [[word.poem.line2]]<br/>
+                  [[word.poem.line3]]<br/>
+                  [[word.poem.line4]]<br/>
+                  [[word.poem.line5]]<br/>
+                </p>
                 <address>[[word.translation]]</address>
               </div>
+            </iron-swipeable-container>
+
+
         </template>
       </iron-list>
 
       <div class="loadingIndicator">
-        <paper-spinner active="{{loadingWords}}"></paper-spinner> Fetching data
+        <paper-spinner active="{{loadingWords}}"></paper-spinner> Llenando Palabras
       </div>
 
       <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
-      <iron-scroll-threshold id="scrollTheshold"
-          lower-threshold="500"
+     <iron-scroll-threshold id="scrollTheshold"
+          lower-threshold="100"
           on-lower-threshold="_load"
+          lower-triggered="{{nearBottom}}
           scroll-target="document"></iron-scroll-threshold>
     </template>
     <script>
@@ -137,6 +164,7 @@
         is: 'my-view4',
         _load: function() {
           this.$.ajax.generateRequest();
+
         },
         _didRespond: function(e) {
           var people = e.detail.response.results;
@@ -145,6 +173,7 @@
           }, this);
           // Clear the lower threshold so we can load more data when the user scrolls down again.
           this.$.scrollTheshold.clearTriggers();
+          console.log("cleartriggers");
         }
       });
     });

@@ -1,9 +1,71 @@
 {"results":[
+	{"number":"1",
+	 "present":"BLEED",
+	 "past":"BLED",
+	 "audio":"005Page9Number1BleedBled.mp3",
+	 "poem":{
+	 	"line1": "Her arm bled a lot.",
+		"line2": "Her ARM bled.",
+	 	"line3": "It bled, it bled, it bled, it bled.",
+	 	"line4": "And in the end, the",
+	 	"line5": "floor was RED."
+	 	},
+	 "translation":"Su brazo sangró mucho. Su brazo sangró. sangró, sangró, sangró, sangró. Y al final, el piso estaba rojo.",
+	 "picture":{"large":"1.png","medium":"1.png","thumbnail":"1.png"},"nat":"FI"
+	},
+	{"number":"2",
+	 "present":"FLEE",
+	 "past":"FLED",
+	 "audio":"006 Number 2 Flee Fled.mp3",
+	 "poem":{
+	 	"line1": "The thief fled.",
+		"line2": "He stayed nearby. (nearby is near)",
+	 	"line3": "He couldn't flee far",
+	 	"line4": "because he had NO SHOES.",
+	 	"line5": ""
+	 	},
+	 "translation":"",
+	 "picture":{"large":"2.png","medium":"2.png","thumbnail":"2.png"},"nat":"FI"
+	},
+	{"number":"3",
+	 "present":"FEED",
+	 "past":"FED ",
+	 "audio":"007 Number 3 Feed Fed.mp3",
+	 "poem":{
+	 	"line1": "The father fed the baby.",
+		"line2": "Then his MOTHER fed the",
+	 	"line3": "baby. She fed him.  She fed ",
+	 	"line4": "him.  She fed him until he",
+	 	"line5": "almost POPPED!!!!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"3.png","medium":"3.png","thumbnail":"3.png"},"nat":"FI"
+	},
+	{"number":"4",
+	 "present":"MEET",
+	 "past":"MET",
+	 "audio":"008 Number 4 Meet Met.mp3",
+	 "poem":{
+	 	"line1": "We met  in the PARK!",
+		"line2": "No, we met in the ZOO!”",
+	 	"line3": "No, we met in the PARK!",
+	 	"line4": "I know! We met in the zoo in the PARK! ",
+	 	"line5": "You are right!  Near the monkeys!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"4.png","medium":"4.png","thumbnail":"4.png"},"nat":"FI"
+	},
 	{"number":"109",
 	 "present":"EAT",
 	 "past":"ATE",
 	 "audio":"117_ Number_109_Eat_Ate.mp3",
-	 "poem":"They ate turkey,\r\n mashed potatoes and PUMPKIN pie.\r\n They ate and ate and ate and ate, \r\n and in the end, \r\nthey fell ASLEEP on their PLATES!",	
+	 "poem":{
+	 	"line1": "They ate turkey, ",
+		"line2": "mashed potatoes and PUMPKIN pie. ",
+	 	"line3": "They ate and ate and ate and ate, ",
+	 	"line4": "and in the end,",
+	 	"line5": "they fell ASLEEP on their PLATES!"
+	 	},
 	 "translation":"Comieron pavo, puré de patatas y pastel de CALABAZA. Comieron, comieron, comieron y comieron, y al final, ¡se quedaron DORMIDOS en sus PLATOS!",
 	 "picture":{"large":"eat2.png","medium":"eat2.png","thumbnail":"eat2.png"},"nat":"FI"
 	},
@@ -17,4 +79,4 @@
 	}
 
 ],
-"info":{"seed":"ce37070026700343","results":2,"page":1,"version":"1.1"}}
+"info":{"seed":"ce37070026700343","results":200,"page":2,"version":"1.1"}}
