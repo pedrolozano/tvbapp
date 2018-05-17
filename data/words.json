@@ -1,0 +1,20 @@
+{"results":[
+	{"number":"109",
+	 "present":"EAT",
+	 "past":"ATE",
+	 "audio":"117_ Number_109_Eat_Ate.mp3",
+	 "poem":"They ate turkey,\r\n mashed potatoes and PUMPKIN pie.\r\n They ate and ate and ate and ate, \r\n and in the end, \r\nthey fell ASLEEP on their PLATES!",	
+	 "translation":"Comieron pavo, puré de patatas y pastel de CALABAZA. Comieron, comieron, comieron y comieron, y al final, ¡se quedaron DORMIDOS en sus PLATOS!",
+	 "picture":{"large":"eat2.png","medium":"eat2.png","thumbnail":"eat2.png"},"nat":"FI"
+	},
+	{"number":"110",
+	 "present":"EAT",
+	 "past":"ATE",
+	 "audio":"117_ Number_109_Eat_Ate.mp3",
+	 "poem":"They ate turkey,\r\n mashed potatoes and PUMPKIN pie.\r\n They ate and ate and ate and ate, \r\n and in the end, \r\nthey fell ASLEEP on their PLATES!",	
+	 "translation":"Comieron pavo, puré de patatas y pastel de CALABAZA. Comieron, comieron, comieron y comieron, y al final, ¡se quedaron DORMIDOS en sus PLATOS!",
+	 "picture":{"large":"eat2.png","medium":"eat2.png","thumbnail":"eat2.png"},"nat":"FI"
+	}
+
+],
+"info":{"seed":"ce37070026700343","results":2,"page":1,"version":"1.1"}}

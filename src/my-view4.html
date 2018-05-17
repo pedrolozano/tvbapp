@@ -11,287 +11,149 @@
   <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="../bower_components/iron-image/iron-image.html">
   <link rel="import" href="../bower_components/iron-list/iron-list.html">
+  <link rel="import" href="../bower_components/iron-swipeable-container/iron-swipeable-container.html">
+   <link rel="import" href="../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
+   <link rel="import" href="../bower_components/iron-image/iron-image.html">
+   <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+  <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <dom-module id="my-view4">
   <template>
-    <style>
-     /* :host {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }*/
-    body {
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    iron-list {
-      /* add padding since the app-toolbar is fixed at the top */
-      flex: 1 1 auto;
-    }
-    app-toolbar {
-        background-color: var(--google-green-700);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
-        font-weight: bold;
-        color: white;
-        font-size: 18px;
-        z-index: 1;
-        /*position: fixed;*/
-        top: 10px;
-        left: 0;
-        right: 0;
-      }
-      app-toolbar paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
-      iron-list {
-        padding-top: 64px;
-        --iron-list-items-container: {
-          max-width: 90%;
-          margin: auto;
-          margin-top: 60px;
-          margin-bottom: 60px;
-          border-bottom: 1px solid #ddd;
-          height: 100vh;
-        };
-      }
-      .item {
-        @apply --layout-horizontal;
-        padding: 20px;
-        background-color: white;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        margin-bottom: 10px;
-      }
-      .avatar {
-        height: 40px;
-        width: 40px;
-        border-radius: 20px;
-        box-sizing: border-box;
-        background-color: #DDD;
-      }
-      .pad {
-        padding: 0 16px;
-        @apply --layout-flex;
-        @apply --layout-vertical);
-      }
-      .primary {
-        font-size: 16px;
-        font-weight: bold;
-      }
-      .shortText, .longText {
-        font-size: 14px;
-      }
-      .longText {
-        color: gray;
-        display: none;
-      }
-      .item:hover .shortText::after {
-        content: ' [+]';
-        color: gray;
-      }
-      .item.expanded:hover .shortText::after {
-        content: '';
-      }
-      .item.expanded .longText {
+    <style include="shared-styles">
+      :host {
         display: block;
+
+        padding: 10px;
       }
-      .item.expanded:hover .longText::after {
-        content: ' [–]';
-      }
-      .spacer {
-        @apply --layout-flex;
-      }
-      @media (max-width: 460px) {
-        paper-toolbar .bottom.title {
+      app-toolbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: #F57C00;
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+          color: white;
+          z-index: 1;
+          font-weight: bold;
+          font-size: 18px;
+        }
+        .loadingIndicator {
+          text-align: center;
+          height: 40px;
+        }
+        paper-spinner {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+        iron-list {
+          padding-top: 64px;
+          padding-bottom: 16px;
+          --iron-list-items-container: {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 10px;
+          };
+        }
+        .wordItem {
+          @apply --layout-horizontal;
+          margin: 16px 16px 0 16px;
+          padding: 20px;
+          border-radius: 8px;
+          background-color: white;
+          border: 1px solid #ddd;
+        }
+        .avatar {
+          height: 200px;
+          width: 200px;
+          border-radius: 20px;
+          box-sizing: border-box;
+          background-color: #DDD;
+        }
+        .pad {
+          padding: 0 16px;
+          @apply --layout-flex;
+          @apply --layout-vertical;
+        }
+        .primary {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        address {
           font-size: 14px;
+          margin: 10px 0;
         }
-      }
 
-      .show {
-          background-color:yellow;   
-      }
-
-        #searcher { position:fixed; top:10px; right:10px; }
-
-        #result {
-         position: absolute;
-         width: 100%;
-         max-width:870px;
-         cursor: pointer;
-         overflow-y: auto;
-         max-height: 400px;
-         box-sizing: border-box;
-         z-index: 1001;
+        .spacer {
+          @apply --layout-flex;
         }
-        .link-class:hover{
-         background-color:#f1f1f1;
+        .index {
+          width: 30px;
         }
-  </style>
 
-   <iron-ajax url="../data/contacts.json" last-response="{{items}}" auto></iron-ajax>
-  
-  <app-toolbar>
-      <div main-title>Verbs with "ee"</div>
-     <!--<input-search id = "searcher" bind-value="{{query}}" >
-      <input>
-    </iron-search>-->
-     <!-- <paper-input label="query" value="{{query}}"></paper-input>-->
-      <paper-icon-button icon="search" alt="Search"  on-tap="searchData"   ></paper-icon-button>
-      <paper-icon-button icon="more-vert" alt="More options"></paper-icon-button>
-    </app-toolbar>
+    </style>
+ <iron-ajax id="ajax"
+          url="../data/words.json"
+          params='{"results": 20}'
+          handle-as="json"
+          loading="{{loadingWords}}"
+          on-response="_didRespond"></iron-ajax>
 
-    <!--<div align="center">
-    <input type="text" name="search" id="search" placeholder="Search Employee Details" class="form-control" />
-   </div>-->
-   <!--<ul class="list-group" id="result"></ul>-->
-   <br />
-  </div>
+      <app-toolbar>
+        <div main-title> Cargando palabras</div> 
+      </app-toolbar>
 
-    <iron-list id="list" items="[[items]]" as="item" selection-enabled multi-selection>
-      <template>
-        <div>
-          <div class$="[[getClassForItem(item, selected)]]" tabindex$="[[tabIndex]]">
-            <iron-image class="avatar" sizing="contain" src="[[item.image]]"></iron-image>
-            <div class="pad">
-              <div class="primary">[[item.name]]</div>
-              <div class="shortText">[[item.shortText]]</div>
-              <div class="longText">[[item.longText]]</div>
-            </div>
-            <iron-icon icon$="[[iconForItem(item)]]"></iron-icon>
-          </div>
-        </div>
-      </template>
-    </iron-list>
+      <iron-list id="list" items="[]" as="word" scroll-target="document">
+        <template>          
+              <div class="card"  tabindex$="[[tabIndex]]">
+                <h1>[[word.number]] [[word.present]] [[word.past]]</h1>
+                <audio controls controlsList="nodownload" id="myAudio">
+                <source src="audio/[[word.audio]]"type="audio/mpeg"></audio>
+                <iron-image class="avatar" sizing="contain" src="images/[[word.picture.medium]]"></iron-image>
+                <address>
+                  [[word.poem]]<br/>
+                </address>
+                <address>[[word.translation]]</address>
+              </div>
+        </template>
+      </iron-list>
 
-  </template>
+      <div class="loadingIndicator">
+        <paper-spinner active="{{loadingWords}}"></paper-spinner> Fetching data
+      </div>
 
-
- 
-  <!--<script  type="text/javascript" src="json2.js"></script>
-  <script>
-$(document).ready(function(){
- $.ajaxSetup({ cache: false });
- $('#search').keyup(function(){
-  $('#result').html('');
-  $('#state').val('');
-  var searchField = $('#search').val();
-  var expression = new RegExp(searchField, "i");
-  $.getJSON('../data/contacts.json', function(data) {
-   $.each(data, function(key, value){
-    if (value.name.search(expression) != -1 || value.location.search(expression) != -1)
-    {
-     $('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted">'+value.location+'</span></li>');
-    }
-   });   
-  });
- });
- 
- $('#result').on('click', 'li', function() {
-  var click_text = $(this).text().split('|');
-  $('#search').val($.trim(click_text[0]));
-  $("#result").html('');
- });
-});
-</script>-->
-  <script>
+      <!-- this element will load more data when the user scrolls down and reached the lower threshold -->
+      <iron-scroll-threshold id="scrollTheshold"
+          lower-threshold="500"
+          on-lower-threshold="_load"
+          scroll-target="document"></iron-scroll-threshold>
+    </template>
+    <script>
     HTMLImports.whenReady(function() {
       Polymer({
         is: 'my-view4',
-        properties: {
-          items: {
-            type: Array,
-            value: function() {
-              return [];
-            }
-          }
+        _load: function() {
+          this.$.ajax.generateRequest();
         },
-        attached: function() {
-          // Use the document element
-          this.$.list.scrollTarget = this.ownerDocument.documentElement;
-        },
-        iconForItem: function(item) {
-          return item ? (item.integer < 50 ? 'star-border' : 'star') : '';
-        },
-        getClassForItem: function(item, selected) {
-          return selected ? 'item expanded' : 'item';
-        },
-
-        searchData: function(query) {
-          alert(this.query);
-
-          var txt = (this.query || '').toLowerCase(),
-          i, len, data, prop, val, matches = [];;
-          alert("txt"+txt+"");
-          if (this.query == '') {
-            alert("No coincidio");
-            return matches;
-          }
-
-          for (i = 0, len = items.length; i < len; i++) {
-            data = items[i];
-            for (prop in data) {
-              if (data.hasOwnProperty(prop)) {
-                val = data[prop];
-                if (typeof val !== 'undefined' && val.toLowerCase && val.toLowerCase().indexOf(txt) >= 0) {
-                  // this data matches
-                  alert ("matches"+ val);
-                  matches.push(data);
-                  break;
-                }
-              }
-            }
-          }
-          return matches;          
+        _didRespond: function(e) {
+          var people = e.detail.response.results;
+          people.forEach(function(person) {
+            this.$.list.push('items', person);
+          }, this);
+          // Clear the lower threshold so we can load more data when the user scrolls down again.
+          this.$.scrollTheshold.clearTriggers();
         }
-
       });
     });
-/*
-    $('#searcher').quicksearch('table tbody tr', {
-    'delay': 100,
-    'bind': 'keyup keydown',
-    'show': function() {
-        if ($('#searcher').val() === '') {
-            return;
-        }
-        $(this).addClass('show');
-    },
-    'onAfter': function() {
-        if ($('#searcher').val() === '') {
-            return;
-        }
-        if ($('.show:first').length > 0) {
-          $('html,body').scrollTop($('.show:first').offset().top);
-        }
-    },
-    'hide': function() {
-        $(this).removeClass('show');
-    },
-    'prepareQuery': function(val) {
-        return new RegExp(val, "i");
-    },
-    'testQuery': function(query, txt, _row) {
-        return query.test(txt);
-    }
-});
-
-$('#searcher').focus();
-   /*class MyView4 extends Polymer.Element {
+    </script>
+ <!--<script>
+    class MyView4 extends Polymer.Element {
       static get is() { return 'my-view4'; }
-    }*/
+    }
 
- /*   window.customElements.define(MyView4.is, MyView4);*/
-  </script>
+    window.customElements.define(MyView4.is, MyView4);
+  </script>-->
 </dom-module>
-
-
-
-
-
