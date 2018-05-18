@@ -29,7 +29,16 @@
       iron-scroll-threshold {
       height: 100%;
       overflow: auto;
-       }         
+       }   
+      iron-list {
+          padding-bottom: 16px;
+          --iron-list-items-container: {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 10px;
+          };   
+        };   
 
       app-toolbar {
           position: fixed;
@@ -52,16 +61,8 @@
           height: 20px;
           margin-right: 10px;
         }
-        iron-list {
-          padding-top: 64px;
-          padding-bottom: 16px;
-          --iron-list-items-container: {
-            max-width: 800px;
-            margin: auto;
-            margin-top: 60px;
-            margin-bottom: 10px;
-          };
-        }
+       
+        
         .wordItem {
           @apply --layout-horizontal;
           margin: 16px 16px 0 16px;
@@ -106,24 +107,33 @@
           auto></iron-ajax>
 
       <app-toolbar>
-        <div main-title> Cargando palabras</div> 
+        <div main-title> Verb Family </div> 
       </app-toolbar>
 
       <iron-list id="list" items="[[items]]" as="word" scroll-target="document">
         <template>  
             <iron-swipeable-container>       
-              <div class="card"  tabindex$="[[tabIndex]]">
+              <div class="card"  tabindex$="[[word.number]]">
                 <h1>[[word.number]] [[word.present]], [[word.past]]</h1>
-                <audio controls controlsList="nodownload" id="myAudio">
-                <source src="audio/[[word.audio]]"type="audio/mpeg"></audio>
+                <audio controls controlsList="nodownload" id="[[word.number]]">
+                <source src="../audio/[[word.audio]]"type="audio/mpeg"></audio>
                 <iron-image class="avatar" sizing="contain" src="images/[[word.picture.medium]]"></iron-image>
-                <p>
+                <div>
                   [[word.poem.line1]]<br/>
                   [[word.poem.line2]]<br/>
                   [[word.poem.line3]]<br/>
                   [[word.poem.line4]]<br/>
                   [[word.poem.line5]]<br/>
-                </p>
+                   <template is="dom-if" if="[[word.poem.line6]]">
+                  [[word.poem.line6]]<br/>
+                   </template>
+                  <template is="dom-if" if="[[word.poem.line7]]">
+                  [[word.poem.line7]]<br/>
+                   </template>
+                  <template is="dom-if" if="[[word.poem.line8]]">
+                  [[word.poem.line8]]<br/>
+                   </template>
+                </div>
                 </address>
                 <address>[[word.translation]]</address>
               </div>

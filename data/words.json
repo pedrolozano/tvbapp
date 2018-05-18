@@ -16,7 +16,7 @@
 	{"number":"2",
 	 "present":"FLEE",
 	 "past":"FLED",
-	 "audio":"006 Number 2 Flee Fled.mp3",
+	 "audio":"006Number2FleeFled.mp3",
 	 "poem":{
 	 	"line1": "The thief fled.",
 		"line2": "He stayed nearby. (nearby is near)",
@@ -30,7 +30,7 @@
 	{"number":"3",
 	 "present":"FEED",
 	 "past":"FED ",
-	 "audio":"007 Number 3 Feed Fed.mp3",
+	 "audio":"007Number3FeedFed.mp3",
 	 "poem":{
 	 	"line1": "The father fed the baby.",
 		"line2": "Then his MOTHER fed the",
@@ -44,10 +44,10 @@
 	{"number":"4",
 	 "present":"MEET",
 	 "past":"MET",
-	 "audio":"008 Number 4 Meet Met.mp3",
+	 "audio":"008Number4MeetMet.mp3",
 	 "poem":{
 	 	"line1": "We met  in the PARK!",
-		"line2": "No, we met in the ZOO!”",
+		"line2": "No, we met in the ZOO!",
 	 	"line3": "No, we met in the PARK!",
 	 	"line4": "I know! We met in the zoo in the PARK! ",
 	 	"line5": "You are right!  Near the monkeys!"
@@ -55,10 +55,161 @@
 	 "translation":"",
 	 "picture":{"large":"4.png","medium":"4.png","thumbnail":"4.png"},"nat":"FI"
 	},
+	{"number":"5",
+	 "present":"SLEEP",
+	 "past":"SLEPT",
+	 "audio":"009Number5SleepSlept.mp3",
+	 "poem":{
+	 	"line1": "The cat slept on the bed.",
+		"line2": "The cat slept on the books.",
+	 	"line3": "Then it slept on the floor.",
+	 	"line4": "And in the end, it slept some more!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"5.png","medium":"5.png","thumbnail":"5.png"},"nat":"FI"
+	},
+	{"number":"6",
+	 "present":"SWEEP",
+	 "past":"SWEPT",
+	 "audio":"010Page10Number6SweepSwept.mp3",
+	 "poem":{
+	 	"line1": "Cinderella, swept the hall.",
+		"line2": "She swept the hall.",
+	 	"line3": "She swept the kitchen.",
+	 	"line4": "She swept the bedroom.",
+	 	"line5": "She swept the BATHROOM.",
+	 	"line6": "Then she swept the living room.",
+	 	"line7": "And in the end, she swept them ",
+	 	"line8": "ALL AGAIN!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"6.png","medium":"6.png","thumbnail":"6.png"},"nat":"FI"
+	},
+	{"number":"7",
+	 "present":"CREEP",
+	 "past":"CREPT",
+	 "audio":"011Number7CreepCrept.mp3",
+	 "poem":{
+	 	"line1": "The burglar crept into the office.  (A burglar steals quietly.)",
+		"line2": "He crept into the office.",
+	 	"line3": "He crept quietly down the HALL.",
+	 	"line4": "He crept quietly to the safe! ",
+	 	"line5": "She swept the BATHROOM.",
+	 	"line6": "He crept ALL around the house",
+	 	"line7": "and in the end, he stepped on a mouse!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"7.png","medium":"7.png","thumbnail":"7.png"},"nat":"FI"
+	},
+	{"number":"8",
+	 "present":"KEEP",
+	 "past":"KEPT ",
+	 "audio":"012Number8KeepKept.mp3",
+	 "poem":{
+	 	"line1": "He kept talking.",
+		"line2": "He kept talking, he kept talking.",
+	 	"line3": "and in the end,",
+	 	"line4": "his students kept falling ASLEEP."
+	 	},
+	 "translation":"",
+	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
+	},
+	{"number":"9",
+	 "present":"WEEP",
+	 "past":"WEPT ",
+	 "audio":"013Number9WeepWept.mp3",
+	 "poem":{
+	 	"line1": "To weep is to cry a lot.",
+		"line2": "He wept and wept and wept and wept,",
+	 	"line3": "and in the end the floor was wet."
+	 	},
+	 "translation":"",
+	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
+	},
+	{"number":"10",
+	 "present":"KNEEL",
+	 "past":"KNELT",
+	 "audio":"014Page11Number10KneelKnelt.mp3",
+	 "poem":{
+	 	"line1": "The man knelt.  He knelt and knelt",
+		"line2": "and knelt and knelt,",
+	 	"line3": "and in the end",
+	 	"line3": "he fell on the floor."
+	 	},
+	 "translation":"",
+	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
+	},
+		{"number":"11",
+	 "present":"FEEL",
+	 "past":"FELT",
+	 "audio":"015Number11FeelFelt.mp3",
+	 "poem":{
+	 	"line1": "She felt happy.",
+		"line2": "Then she felt VERY sad.",
+	 	"line3": "She felt sad, she felt sad,",
+	 	"line4": "but in the end,she felt GLAD."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"11.png","medium":"11.png","thumbnail":"11.png"},"nat":"FI"
+	},
+
+	{"number":"12",
+	 "present":"LEAVE",
+	 "past":"LEFT ",
+	 "audio":"016Number12LeaveLeft.mp3",
+	 "poem":{
+	 	"line1": "She left her husband on Tuesday.  She left on WEDNESDAY.",
+		"line2": "She left on THURSDAY.  But when she REALLY left on FRIDAY,",
+	 	"line3": "no one BELIEVED it was TRUE!",
+	 	"line4": "And when she wasn't mad, she came back!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"12.png","medium":"12.png","thumbnail":"12.png"},"nat":"FI"
+	},
+	{"number":"13",
+	 "present":"LEAD",
+	 "past":"LED",
+	 "audio":"017Number13LeadLed.mp3",
+	 "poem":{
+	 	"line1": "He led the city.",
+		"line2": "He led the STATE.  He led the state.",
+	 	"line3": "He led the state and in the end, ",
+	 	"line4": "he led the NATION!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"13.png","medium":"13.png","thumbnail":"13.png"},"nat":"FI"
+	},
+		{"number":"14",
+	 "present":"DEAL",
+	 "past":"DEALT",
+	 "audio":"018Number14DealDealt.mp3",
+	 "poem":{
+	 	"line1": "She dealt one card.",
+		"line2": "She dealt two.",
+	 	"line3": "And in the end,",
+	 	"line4": "she got a job in Las Vegas."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"14.png","medium":"14.png","thumbnail":"14.png"},"nat":"FI"
+	},
+		{"number":"15",
+	 "present":"READ",
+	 "past":"READ",
+	 "audio":"019Page12Number15ReadRead.mp3",
+	 "poem":{
+	 	"line1": "She read her SPANISH book.",
+		"line2": "She read and read and read and read,",
+	 	"line3": "and in the end, her eyes were red."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"15.png","medium":"15.png","thumbnail":"15.png"},"nat":"FI"
+	},
+
+
 	{"number":"109",
 	 "present":"EAT",
 	 "past":"ATE",
-	 "audio":"117_ Number_109_Eat_Ate.mp3",
+	 "audio":"117_Number_109_Eat_Ate.mp3",
 	 "poem":{
 	 	"line1": "They ate turkey, ",
 		"line2": "mashed potatoes and PUMPKIN pie. ",
