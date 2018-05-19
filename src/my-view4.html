@@ -115,8 +115,9 @@
             <iron-swipeable-container>       
               <div class="card"  tabindex$="[[word.number]]">
                 <h1>[[word.number]] [[word.present]], [[word.past]]</h1>
-                <audio controls controlsList="nodownload" id="[[word.number]]">
-                <source src="../audio/[[word.audio]]"type="audio/mpeg"></audio>
+                <audio controls controlsList="nodownload" id="[[word.number]]" 
+                src="../audio/[[word.audio]]" type="audio/mpeg">
+                </audio>
                 <iron-image class="avatar" sizing="contain" src="images/[[word.picture.medium]]"></iron-image>
                 <div>
                   [[word.poem.line1]]<br/>
