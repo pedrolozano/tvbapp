@@ -1,5 +1,6 @@
 [
 	{"number":"1",
+	 "family":"ee",  
 	 "present":"BLEED",
 	 "past":"BLED",
 	 "audio":"005Page9Number1BleedBled.mp3",
@@ -14,6 +15,7 @@
 	 "picture":{"large":"1.png","medium":"1.png","thumbnail":"1.png"},"nat":"FI"
 	},
 	{"number":"2",
+	 "family":"ee",  
 	 "present":"FLEE",
 	 "past":"FLED",
 	 "audio":"006Number2FleeFled.mp3",
@@ -28,6 +30,7 @@
 	 "picture":{"large":"2.png","medium":"2.png","thumbnail":"2.png"},"nat":"FI"
 	},
 	{"number":"3",
+	 "family":"ee",  
 	 "present":"FEED",
 	 "past":"FED ",
 	 "audio":"007Number3FeedFed.mp3",
@@ -42,6 +45,7 @@
 	 "picture":{"large":"3.png","medium":"3.png","thumbnail":"3.png"},"nat":"FI"
 	},
 	{"number":"4",
+	 "family":"ee",  
 	 "present":"MEET",
 	 "past":"MET",
 	 "audio":"008Number4MeetMet.mp3",
@@ -56,6 +60,7 @@
 	 "picture":{"large":"4.png","medium":"4.png","thumbnail":"4.png"},"nat":"FI"
 	},
 	{"number":"5",
+	 "family":"ee",  
 	 "present":"SLEEP",
 	 "past":"SLEPT",
 	 "audio":"009Number5SleepSlept.mp3",
@@ -69,6 +74,7 @@
 	 "picture":{"large":"5.png","medium":"5.png","thumbnail":"5.png"},"nat":"FI"
 	},
 	{"number":"6",
+	 "family":"ee",  
 	 "present":"SWEEP",
 	 "past":"SWEPT",
 	 "audio":"010Page10Number6SweepSwept.mp3",
@@ -86,6 +92,7 @@
 	 "picture":{"large":"6.png","medium":"6.png","thumbnail":"6.png"},"nat":"FI"
 	},
 	{"number":"7",
+	 "family":"ee",  
 	 "present":"CREEP",
 	 "past":"CREPT",
 	 "audio":"011Number7CreepCrept.mp3",
@@ -102,6 +109,7 @@
 	 "picture":{"large":"7.png","medium":"7.png","thumbnail":"7.png"},"nat":"FI"
 	},
 	{"number":"8",
+	 "family":"ee",  
 	 "present":"KEEP",
 	 "past":"KEPT ",
 	 "audio":"012Number8KeepKept.mp3",
@@ -115,6 +123,7 @@
 	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
 	},
 	{"number":"9",
+	 "family":"ee",  
 	 "present":"WEEP",
 	 "past":"WEPT ",
 	 "audio":"013Number9WeepWept.mp3",
@@ -127,6 +136,7 @@
 	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
 	},
 	{"number":"10",
+	 "family":"ee",  
 	 "present":"KNEEL",
 	 "past":"KNELT",
 	 "audio":"014Page11Number10KneelKnelt.mp3",
@@ -140,6 +150,7 @@
 	 "picture":{"large":".png","medium":".png","thumbnail":".png"},"nat":"FI"
 	},
 		{"number":"11",
+	 "family":"ee",  
 	 "present":"FEEL",
 	 "past":"FELT",
 	 "audio":"015Number11FeelFelt.mp3",
@@ -154,6 +165,7 @@
 	},
 
 	{"number":"12",
+	"family":"ea",
 	 "present":"LEAVE",
 	 "past":"LEFT ",
 	 "audio":"016Number12LeaveLeft.mp3",
@@ -167,6 +179,7 @@
 	 "picture":{"large":"12.png","medium":"12.png","thumbnail":"12.png"},"nat":"FI"
 	},
 	{"number":"13",
+	 "family":"ea",
 	 "present":"LEAD",
 	 "past":"LED",
 	 "audio":"017Number13LeadLed.mp3",
@@ -180,6 +193,7 @@
 	 "picture":{"large":"13.png","medium":"13.png","thumbnail":"13.png"},"nat":"FI"
 	},
 		{"number":"14",
+	 "family":"ea",
 	 "present":"DEAL",
 	 "past":"DEALT",
 	 "audio":"018Number14DealDealt.mp3",
@@ -193,6 +207,7 @@
 	 "picture":{"large":"14.png","medium":"14.png","thumbnail":"14.png"},"nat":"FI"
 	},
 		{"number":"15",
+	 "family":"ea",
 	 "present":"READ",
 	 "past":"READ",
 	 "audio":"019Page12Number15ReadRead.mp3",
@@ -205,6 +220,204 @@
 	 "picture":{"large":"15.png","medium":"15.png","thumbnail":"15.png"},"nat":"FI"
 	},
 
+	{"number":"16",
+	 "family":"past with “e”",
+	 "present":"FALL",
+	 "past":"FELL",
+	 "audio":"020Number16FallFell.mp3",
+	 "poem":{
+	 	"line1": "The baby fell down.",
+		"line2": "He fell down.  He fell down",
+	 	"line3": "but  in the end, he learned how to walk!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"15.png","medium":"15.png","thumbnail":"15.png"},"nat":"FI"
+	},
+	
+	 {"number":"17",
+	 "family":"past with “e”",
+	 "present":"BEND",
+	 "past":"BENT",
+	 "audio":"021Number17BendBent.mp3",
+	 "poem":{
+	 	"line1": "He bent over to touch his toes.",
+		"line2": "He bent, he bent, he bent, he bent and in the end,",
+	 	"line3": "he fell into the water."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"17.png","medium":"17.png","thumbnail":"17.png"},"nat":"FI"
+	},
+
+	{"number":"18",
+	 "family":"past with “e”",
+	 "present":"LEND",
+	 "past":"LENT",
+	 "audio":"022Number18LendLent.mp3",
+	 "poem":{
+	 	"line1": "The bank lent me money for a car.",
+		"line2": "They lent me money for a boat.",
+	 	"line3": "They lent me money for a vacation.",
+	 	"line4": "But in the end, I couldn't pay the loan BACK!"	
+	 	},
+	 "translation":"",
+	 "picture":{"large":"18.png","medium":"18.png","thumbnail":"18.png"},"nat":"FI"
+	},
+
+	{"number":"19",
+	 "family":"past with “e”",
+	 "present":"SEND",
+	 "past":"SENT",
+	 "audio":"023Number19SendSent.mp3",
+	 "poem":{
+	 	"line1": "I sent her a letter. I sent a valentine.",
+		"line2": "Then I sent her my photo",
+	 	"line3": "and a key to my heart!",
+	 	"line4": "And what did she do?",
+	 	"line5": "She sent them ALL BACK!" 
+	 	},
+	 "translation":"",
+	 "picture":{"large":"19.png","medium":"19.png","thumbnail":"19.png"},"nat":"FI"
+	},
+
+	{"number":"20",
+	 "family":"past with “e”",
+	 "present":"SPEND",
+	 "past":"SPENT",
+	 "audio":"024Page13Number20SpendSpent.mp3",
+	 "poem":{
+	 	"line1": "I saved my money.",
+		"line2": "Then I SPENT it! (the money)",
+	 	"line3": "I SPENT IT!",
+	 	"line4": "I SPENT IT!",
+	 	"line5": "Where it went, no one KNOWS!" 
+	 	},
+	 "translation":"",
+	 "picture":{"large":"20.png","medium":"20.png","thumbnail":"20.png"},"nat":"FI"
+	},
+
+	{"number":"21",
+	 "family":"past with “e”",
+	 "present":"MEAN",
+	 "past":"MEANT",
+	 "audio":"025Number21MeanMeant.mp3",
+	 "poem":{
+	 	"line1": "Jason: I'm going to the peach festival.",
+		"line2": "OH!  I meant to say the PEACE festival!  Sorry!",
+	 	"line3": "Barbara:  It is very night.  OH!  I meant to say very NICE,  not very NIGHT!",
+	 	"line4": "Jason:   Oh, NOW I understand what you MEANT!”"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"21.png","medium":"21.png","thumbnail":"21.png"},"nat":"FI"
+	},
+	
+	{"number":"22",
+	"family":"past with “e”",
+	 "present":"HOLD",
+	 "past":"HELD",
+	 "audio":"026Number22HoldHeld.mp3",
+	 "poem":{
+	 	"line1": "He held his baby.  He held his baby,",
+		"line2": "and in the end,",
+	 	"line3": "he couldn't put the baby down",
+	 	"line4": "because he cried and cried and cried and cried."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"22.png","medium":"22.png","thumbnail":"22.png"},"nat":"FI"
+	},
+	{"number":"23",
+	 "family":"past with “e”",
+	 "present":"SAY",
+	 "past":"SAID",
+	 "audio":"027Number23SaySaid.mp3",
+	 "poem":{
+	 	"line1": "I said \"NO!\" ",
+		"line2": "I said \"NO!\" ",
+	 	"line3": "I said \"NO!\" ",
+	 	"line4": "But in the end, I said \"YES!\""
+	 	},
+	 "translation":"",
+	 "picture":{"large":"23.png","medium":"23.png","thumbnail":"23.png"},"nat":"FI"
+	},
+	 {"number":"24",
+	 "present":"SHED",
+	 "past":"SHED",
+	 "audio":"028Number24ShedShed.mp3",
+	 "poem":{
+	 	"line1": "The snake shed its skin.The snake shed its skin.",
+		"line2": "The trees shed their leaves.  The trees sed their leaves.",
+	 	"line3": "And in the end it was Winter."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"24.png","medium":"24.png","thumbnail":"24.png"},"nat":"FI"
+	},
+	{"number":"25",
+	 "present":"BET",
+	 "past":"BET",
+	 "audio":"029Page14Number25BetBet.mp3",
+	 "poem":{
+	 	"line1": "She bet  in the CASINO in LAS VEGAS.",
+		"line2": "She bet and bet and bet and bet",
+	 	"line3": "and in the end",
+	 	"line3": "she was BROKE.  (no money)."
+	 	},
+	 "translation":"",
+	 "picture":{"large":"25.png","medium":"25.png","thumbnail":"25.png"},"nat":"FI"
+	},
+	{"number":"26",
+	 "present":"LET",
+	 "past":"LET",
+	 "audio":"030Number26LetLet.mp3",
+	 "poem":{
+	 	"line1": "I let the cat in. I let the goat in.",
+		"line2": "I let five chicks and a HEN in",
+	 	"line3": "but  in the end, ",
+	 	"line3": "I let myself OUT!  (of the house)"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"26.png","medium":"26.png","thumbnail":"26.png"},"nat":"FI"
+	},
+	{"number":"27",
+	 "present":"SET",
+	 "past":"SET",
+	 "audio":"031Number27SetSet.mp3",
+	 "poem":{
+	 	"line1": "Mom said, “Please set the table.”",
+		"line2": "“Oh No!  I set it on Monday.  I set it on Tuesday. ",
+	 	"line3": "I set it on Wednesday.”",
+	 	"line4": "Mom said, “And in the end, you will set it today!”",
+	 	"line5": "“Okay, I will do it!  But can YOU wash the dishes?”",
+	 	"line6": "“Okay, I will.”"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"27.png","medium":"27.png","thumbnail":"27.png"},"nat":"FI"
+	},	
+	{"number":"28",
+	 "present":"SPREAD",
+	 "past":"SPREAD",
+	 "audio":"032Number28SpreadSpread.mp3",
+	 "poem":{
+	 	"line1": "The butterfly flew away.",
+		"line2": "It spread its wings,",
+	 	"line3": "It spread its wings.",
+	 	"line4": "And in the end, it flew AWAY!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"28.png","medium":"28.png","thumbnail":"28.png"},"nat":"FI"
+	},
+	{"number":"28",
+	 "present":"SPREAD",
+	 "past":"SPREAD",
+	 "audio":"032Number28SpreadSpread.mp3",
+	 "poem":{
+	 	"line1": "The butterfly flew away.",
+		"line2": "It spread its wings,",
+	 	"line3": "It spread its wings.",
+	 	"line4": "And in the end, it flew AWAY!"
+	 	},
+	 "translation":"",
+	 "picture":{"large":"28.png","medium":"28.png","thumbnail":"28.png"},"nat":"FI"
+	},					
+			
 
 	{"number":"109",
 	 "present":"EAT",

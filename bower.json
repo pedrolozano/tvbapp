@@ -26,7 +26,8 @@
     "iron-swipeable-container": "PolymerElements/iron-swipeable-container#^2.1.0",
     "paper-card": "PolymerElements/paper-card#^2.1.0",
     "iron-scroll-threshold": "PolymerElements/iron-scroll-threshold#^2.0.0",
-    "paper-progress": "PolymerElements/paper-progress#^2.1.1"
+    "paper-progress": "PolymerElements/paper-progress#^2.1.1",
+    "paper-carousel": "Redbility/paper-carousel#^1.2.5"
   },
   "resolutions": {
     "polymer": "^2.0.0"
