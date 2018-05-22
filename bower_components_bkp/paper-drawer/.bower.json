@@ -1,0 +1,44 @@
+{
+  "name": "paper-drawer",
+  "authors": [
+    "collaborne"
+  ],
+  "description": "A Material Design drawer (Polymer)",
+  "main": "paper-drawer.html",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "paper",
+    "material design",
+    "drawer",
+    "menu"
+  ],
+  "license": "Apache 2",
+  "homepage": "https://github.com/collaborne/paper-drawer",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^2.0.0",
+    "paper-item": "PolymerElements/paper-item#^2.0.0",
+    "paper-ripple": "PolymerElements/paper-ripple#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "web-component-tester": "*"
+  },
+  "version": "2.0.2",
+  "_release": "2.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.2",
+    "commit": "c887e9490ed0fed90239fa4eaf11025a9b8650c1"
+  },
+  "_source": "https://github.com/Collaborne/paper-drawer.git",
+  "_target": "^2.0.2",
+  "_originalSource": "Collaborne/paper-drawer",
+  "_direct": true
+}
